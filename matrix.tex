@@ -1,42 +1,66 @@
+% TODO: split into multiple blocks
+
 Multiplication:
 $$ C = A \cdot B, \quad c_{i,j} = \sum_{k=1}^n a_{i,k} b_{k,j}.$$
 Determinants: $\det A \neq 0$ iff $A$ is non-singular.
 $$\det A \cdot B = \det A \cdot \det B,$$
 $$\det A = \sum_\pi \prod_{i=1}^n \sign(\pi) a_{i,\pi(i)}.$$
 % TODO: operations: inversion, transponse, etc...
+
+Cramer's Rule % TODO: format
+
+If we have equations:
+$$
+\eqalign{
+a_{1,1} &x_1 + a_{1,2} x_2 + \cdots + a_{1,n} x_n = b_1 \cr
+a_{2,1} &x_1 + a_{2,2} x_2 + \cdots + a_{2,n} x_n = b_2 \cr
+&\vdots \qquad \qquad \vdots \qquad \qquad \qquad \vdots \cr 
+a_{n,1} &x_1 + a_{n,2} x_2 + \cdots + a_{n,n} x_n = b_n \cr
+}
+$$
+Let $A = (a_{i,j})$ and $B$ be the column matrix $(b_i)$.
+Then there is a unique solution iff $\det A \neq 0$.
+Let $A_i$ be $A$ with column $i$ replaced by $B$.
+Then
+$$
+x_i = {\det A_i \over \det A}.
+$$
+
+
+
 $2 \times 2$ and $3 \times 3$ determinant:
-$$ \left\vert \matrix{
+$$ \left\vert \begin{matrix}
 a &b \cr
 c &d \cr
-}\right\vert = a d - b c,
+\end{matrix}\right\vert = a d - b c,
 $$
 $$
 \eqalign{
-\left\vert \matrix{
+\left\vert \begin{matrix}
 a &b &c \cr
 d &e &f \cr
 g &h &i \cr
-}\right\vert &=
+\end{matrix}\right\vert &=
 g
-\left\vert \matrix{
+\left\vert \begin{matrix}
 b &c \cr
 e &f \cr
-}\right\vert
+\end{matrix}\right\vert
 - h
-\left\vert \matrix{
+\left\vert \begin{matrix}
 a &c \cr
 d &f \cr
-}\right\vert
+\end{matrix}\right\vert
 + i
-\left\vert \matrix{
+\left\vert \begin{matrix}
 a &b \cr
 d &e \cr
-}\right\vert \cr
+\end{matrix}\right\vert \cr
 &=
-\matrix{
+\begin{matrix}
 a e i + b f g + c d h \cr
 \qquad \hbox{} - c e g - f h a - i b d. \cr
-} \cr}$$
+\end{matrix} \cr}$$
 Permanents:
 $$\perm A = \sum_\pi \prod_{i=1}^n a_{i,\pi(i)}.$$
 % TODO: Matrix types from koszi2
@@ -49,9 +73,10 @@ L Lower Triangular & $l_{ij} = 0$ for all $i < j$.\cr
 U Upper Triangular & $u_{ij} = 0$ for all $j < i$.\cr
 G Lower Hessenberg & $g_{ij} = 0$ for all $i + 1 < j$.\cr
 H Upper Hessenberg & $h_{ij} = 0$ for all $j + 1 < i$.\cr
-%B Band & $\exists 1\leq m\leq n-1$ bandwidth that $s_{ij} = 0$ for all $\left|i - j\right| > m$.\cr
-% TODO: latex
-%A Diagonal Dominant & $\left|a_{ij}\right| > \sum_{j=1, i \neq j}^n \left|a_{ij}\right| for all $1 \leq i \leq n$.\cr
-% TODO: reformat
+%B Band & $\exists 1\leq m\leq n-1$ bandwidth that $s_{ij} = 0$ for all $|i - j| > m$.\cr
+% TODO: \left| \right|
+%A Diagonal Dominant & $|a_{ij}| > \sum_{j=1, i \neq j}^n |a_{ij}|$ for all $1 \leq i \leq n$.\cr
+% TODO: \left| \right|
+% TODO: sum
 }
 \Hrule

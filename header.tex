@@ -1,4 +1,4 @@
-\documentclass[equations]{article}
+\documentclass[11pt]{article}
 
 \usepackage{amsmath}    % need for subequations
 \usepackage{graphicx}   % need for figures
@@ -9,5 +9,12 @@
 \usepackage{eqalign}    % PLAIN TeX eqalign
 
 \input cheat
+
+% --- LaTeX hacks ---
+% \sevenrm
+\expandafter\ifx\csname{sevenrm}
+      \endcsname\relax\def\sevenrm{\scriptsize\rm}\fi
+% \mscount
+\newcount\mscount
 
 \begin{document}

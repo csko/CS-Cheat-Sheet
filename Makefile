@@ -1,4 +1,4 @@
-TeX	=	tex
+TeX	=	latex
 CAT	=	dviconcat
 
 PAGES	=	t1.dvi t2.dvi t3.dvi t4.dvi t5.dvi t6.dvi t7.dvi t8.dvi t9.dvi t10.dvi intro.dvi
@@ -11,6 +11,7 @@ cheat.ps:	cheat.dvi
 cheat.dvi: $(PAGES)
 	$(CAT) $(PAGES) > cheat.dvi
 
+header.tex: cheat.tex
 cheat.tex: psfig.tex stables.tex macros.tex
 
 unit.tex: unit.fig
@@ -61,11 +62,11 @@ t10.dvi: t10.tex
 	$(TeX) t10.tex
 
 clean:
-	rm -f angle.tex triangle.tex unit.tex $(PAGES) cheat.dvi *.log *.bak cheat.ps
+	rm -f angle.tex triangle.tex unit.tex $(PAGES) cheat.dvi *.log *.bak *.out *.aux cheat.ps
 
-tar:	clean
-	cd /home/seiden_bit; tar cfv cheat.tar CHEAT; mv cheat.tar CHEAT
-	gzip cheat.tar
+#tar:	clean
+#	cd /home/seiden_bit; tar cfv cheat.tar CHEAT; mv cheat.tar CHEAT
+#	gzip cheat.tar
 
 depend:
 	./bin/makedepend t?.tex t10.tex
@@ -73,13 +74,13 @@ depend:
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 
 intro.dvi:  intro.tex version.tex
-t1.dvi:  cheat.tex sums.tex ids2.tex
-t2.dvi:  cheat.tex ids3.tex trees.tex recur1.tex recur2.tex recur3.tex
-t3.dvi:  cheat.tex misc.tex prob.tex prob2.tex
-t4.dvi:  cheat.tex trig1.tex matrix.tex trig2.tex hyper.tex table.tex quote4.tex
-t5.dvi:  cheat.tex number.tex graph.tex graph2.tex geom.tex quote1.tex
-t6.dvi:  cheat.tex pi.tex calc.tex partial.tex quote3.tex
-t7.dvi:  cheat.tex calc2.tex
-t8.dvi:  cheat.tex calc3.tex finite.tex fact1.tex fact2.tex
-t9.dvi:  cheat.tex series1.tex series3.tex quote2.tex
-t10.dvi:  cheat.tex series2.tex series4.tex stieltjes.tex magic.tex cramers.tex fib1.tex fib2.tex
+t1.dvi:  header.tex sums.tex ids2.tex
+t2.dvi:  header.tex ids3.tex trees.tex recur1.tex recur2.tex recur3.tex
+t3.dvi:  header.tex misc.tex prob.tex prob2.tex
+t4.dvi:  header.tex trig1.tex matrix.tex trig2.tex hyper.tex table.tex quote4.tex
+t5.dvi:  header.tex number.tex graph.tex graph2.tex geom.tex quote1.tex
+t6.dvi:  header.tex pi.tex calc.tex partial.tex quote3.tex
+t7.dvi:  header.tex calc2.tex
+t8.dvi:  header.tex calc3.tex finite.tex fact1.tex fact2.tex
+t9.dvi:  header.tex series1.tex series3.tex quote2.tex
+t10.dvi:  header.tex series2.tex series4.tex stieltjes.tex magic.tex cramers.tex fib1.tex fib2.tex
