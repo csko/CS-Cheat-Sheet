@@ -3,6 +3,7 @@ $$ C = A \cdot B, \quad c_{i,j} = \sum_{k=1}^n a_{i,k} b_{k,j}.$$
 Determinants: $\det A \neq 0$ iff $A$ is non-singular.
 $$\det A \cdot B = \det A \cdot \det B,$$
 $$\det A = \sum_\pi \prod_{i=1}^n \sign(\pi) a_{i,\pi(i)}.$$
+% TODO: operations: inversion, transponse, etc...
 $2 \times 2$ and $3 \times 3$ determinant:
 $$ \left\vert \matrix{
 a &b \cr
@@ -39,3 +40,18 @@ a e i + b f g + c d h \cr
 Permanents:
 $$\perm A = \sum_\pi \prod_{i=1}^n a_{i,\pi(i)}.$$
 % TODO: Matrix types from koszi2
+Matrix types:
+\Hrule
+\halign{{\it #}\hfil&\vtop{\parindent=0pt\hsize=1.6in\strut#\strut}\cr
+%S Symmetric & $s_{ij} = s_{ji}$ for all $i, j$.\cr
+D Diagonal & $d_{ij}=0$ for all $i \neq j$.\cr
+L Lower Triangular & $l_{ij} = 0$ for all $i < j$.\cr
+U Upper Triangular & $u_{ij} = 0$ for all $j < i$.\cr
+G Lower Hessenberg & $g_{ij} = 0$ for all $i + 1 < j$.\cr
+H Upper Hessenberg & $h_{ij} = 0$ for all $j + 1 < i$.\cr
+%B Band & $\exists 1\leq m\leq n-1$ bandwidth that $s_{ij} = 0$ for all $\left|i - j\right| > m$.\cr
+% TODO: latex
+%A Diagonal Dominant & $\left|a_{ij}\right| > \sum_{j=1, i \neq j}^n \left|a_{ij}\right| for all $1 \leq i \leq n$.\cr
+% TODO: reformat
+}
+\Hrule
