@@ -15,8 +15,8 @@ do
          next=true;
       else
          n=`basename $f .fig`;
-         fig2dev -L tpic -m $mag <$f | sed '1,$s/white//g' > $n.pic
-         pic -t -c -n $n.pic | fgrep -v '\baseline' >$n.tex
+         fig2dev -L latex -m $mag <$f > $n.tex
+         #pic -t -c -n $n.pic | fgrep -v '\baseline' >$n.tex
       fi;
    fi;
 done
