@@ -1,39 +1,11 @@
 % TODO: split into multiple blocks
 
 Multiplication:
-$$ C = A \cdot B, \quad c_{i,j} = \sum_{k=1}^n a_{i,k} b_{k,j}.$$
-Determinants: $\det A \neq 0$ iff $A$ is non-singular.
-$$\det A \cdot B = \det A \cdot \det B,$$
-$$\det A = \sum_\pi \prod_{i=1}^n \sign(\pi) a_{i,\pi(i)}.$$
+$$ \mathbf{C} = \mathbf{A} \cdot \mathbf{B}, \quad c_{i,j} = \sum_{k=1}^n a_{i,k} b_{k,j}.$$
 
-Identities:
-
-$$A(BC) = (AB)C$$
-$$A(B+C) = AB + AC,\ A(B+C) = AB + AC$$
-$$\det (AB) = \det(A)\det(B)$$
-
-% TODO: operations: inversion, transponse, etc...
-
-Cramer's Rule % TODO: format
-
-If we have equations:
-$$
-\eqalign{
-a_{1,1} &x_1 + a_{1,2} x_2 + \cdots + a_{1,n} x_n = b_1 \cr
-a_{2,1} &x_1 + a_{2,2} x_2 + \cdots + a_{2,n} x_n = b_2 \cr
-&\vdots \qquad \qquad \vdots \qquad \qquad \qquad \vdots \cr 
-a_{n,1} &x_1 + a_{n,2} x_2 + \cdots + a_{n,n} x_n = b_n \cr
-}
-$$
-Let $A = (a_{i,j})$ and $B$ be the column matrix $(b_i)$.
-Then there is a unique solution iff $\det A \neq 0$.
-Let $A_i$ be $A$ with column $i$ replaced by $B$.
-Then
-$$
-x_i = {\det A_i \over \det A}.
-$$
-
-
+Determinants: $\det \mathbf{A} \neq 0$ iff $A$ is non-singular.
+$$\det \mathbf{A} = \sum_\pi \prod_{i=1}^n \sign(\pi) a_{i,\pi(i)}.$$
+$$\det (\mathbf{AB}) = \det(\mathbf{A})\det(\mathbf{B})$$
 
 $2 \times 2$ and $3 \times 3$ determinant:
 $$ \left\vert \begin{matrix}
@@ -68,20 +40,52 @@ d &e \cr
 a e i + b f g + c d h \cr
 \qquad \hbox{} - c e g - f h a - i b d. \cr
 \end{matrix} \cr}$$
+
+
+Other identities:
+
+$$\mathbf{A}(\mathbf{BC}) = (\mathbf{AB})\mathbf{C}$$
+$$\mathbf{A}(\mathbf{B}+\mathbf{C}) = \mathbf{AB} + \mathbf{AC},\ \mathbf{A}(\mathbf{B}+\mathbf{C}) = \mathbf{AB} + \mathbf{AC}$$
+$$(\mathbf{A}^\mathrm{T})^{-1} = (\mathbf{A}^{-1})^\mathrm{T}$$
+$$(\mathbf{A B})^\mathrm{T} = \mathbf{B}^\mathrm{T} \mathbf{A}^\mathrm{T} $$
+
+% TODO: operations: inversion, transponse, etc...
+
+Cramer's Rule % TODO: format
+
+If we have equations:
+$$
+\eqalign{
+a_{1,1} &x_1 + a_{1,2} x_2 + \cdots + a_{1,n} x_n = b_1 \cr
+a_{2,1} &x_1 + a_{2,2} x_2 + \cdots + a_{2,n} x_n = b_2 \cr
+&\vdots \qquad \qquad \vdots \qquad \qquad \qquad \vdots \cr 
+a_{n,1} &x_1 + a_{n,2} x_2 + \cdots + a_{n,n} x_n = b_n \cr
+}
+$$
+Let $\mathbf{A} = (a_{i,j})$ and $\mathbf{B}$ be the column matrix $(b_i)$.
+Then there is a unique solution iff $\det \mathbf{A} \neq 0$.
+Let $\mathbf{A}_i$ be $\mathbf{A}$ with column $i$ replaced by $\mathbf{B}$.
+Then
+$$
+x_i = {\det \mathbf{A}_i \over \det \mathbf{A}}.
+$$
+
+
+
 Permanents:
-$$\perm A = \sum_\pi \prod_{i=1}^n a_{i,\pi(i)}.$$
+$$\perm \mathbf{A} = \sum_\pi \prod_{i=1}^n a_{i,\pi(i)}.$$
 Matrix types:
 \Hrule
 \halign{{\it #}\hfil&\vtop{\parindent=0pt\hsize=1.6in\strut#\strut}\cr
 %S Symmetric & $s_{ij} = s_{ji}$ for all $i, j$.\cr
-D Diagonal & $d_{ij}=0$ for all $i \neq j$.\cr
-L Lower Triangular & $l_{ij} = 0$ for all $i < j$.\cr
-U Upper Triangular & $u_{ij} = 0$ for all $j < i$.\cr
-G Lower Hessenberg & $g_{ij} = 0$ for all $i + 1 < j$.\cr
-H Upper Hessenberg & $h_{ij} = 0$ for all $j + 1 < i$.\cr
-%B Band & $\exists 1\leq m\leq n-1$ bandwidth that $s_{ij} = 0$ for all $|i - j| > m$.\cr
+$\mathbf{D}$ Diagonal & $d_{ij}=0$ for all $i \neq j$.\cr
+$\mathbf{L}$ Lower Triangular & $l_{ij} = 0$ for all $i < j$.\cr
+$\mathbf{U}$ Upper Triangular & $u_{ij} = 0$ for all $j < i$.\cr
+$\mathbf{G}$ Lower Hessenberg & $g_{ij} = 0$ for all $i + 1 < j$.\cr
+$\mathbf{H}$ Upper Hessenberg & $h_{ij} = 0$ for all $j + 1 < i$.\cr
+%$\mathbf{B}$ Band & $\exists 1\leq m\leq n-1$ bandwidth that $s_{ij} = 0$ for all $|i - j| > m$.\cr
 % TODO: \left| \right|
-%A Diagonal Dominant & $|a_{ij}| > \sum_{j=1, i \neq j}^n |a_{ij}|$ for all $1 \leq i \leq n$.\cr
+%$\mathbf{A}$ Diagonal Dominant & $|a_{ij}| > \sum_{j=1, i \neq j}^n |a_{ij}|$ for all $1 \leq i \leq n$.\cr
 % TODO: \left| \right|
 % TODO: sum
 }
