@@ -1,0 +1,35 @@
+\documentclass[9pt]{article}
+
+\usepackage{amsmath}    % need for subequations
+\usepackage{graphicx}   % need for figures
+\usepackage{verbatim}   % useful for program listings
+\usepackage{color}      % use if color is used in text
+\usepackage{subfigure}  % use for side-by-side figures
+\usepackage{hyperref}   % use for hypertext links, including those to external documents and URLs
+\usepackage{eqalign}    % PLAIN TeX eqalign
+\usepackage{geometry}
+
+\input cheat
+
+% --- LaTeX hacks ---
+% \sevenrm
+\expandafter\ifx\csname{sevenrm}
+      \endcsname\relax\def\sevenrm{\scriptsize\rm}\fi
+% \mscount
+\newcount\mscount
+
+\begin{document}
+\input cheat
+
+\input intro
+\input t1
+\input t2
+\input t3
+\input t4
+\input t5
+\input t6
+\input t7
+\input t8
+\input t9
+\input t10
+\end{document}
