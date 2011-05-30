@@ -12,8 +12,15 @@ $$
 Normal (Gaussian) distribution:
 $$
 p(x) = {1 \over \sqrt{2 \pi} \sigma} e^{-(x-\mu)^2/2\sigma^2}, \quad \E[X] = \mu.
-%TODO: multi-dimensional
 $$
+
+Multivariate Normal distribution:
+$$
+% TODO: |
+%p(x) = (2\pi)^{- \frac k  2 }|\Sigma|^{-\frac 1 2 }\, e^{ -\frac 1 2 (x-\mu)'\Sigma^{-1}(x-\mu) }
+$$
+where $\Sigma \in R^{k \times k } $ is the positive-semidefinite covariance matrix.
+
 The ``coupon collector'':
 We are given a random coupon each day,
 and there are $n$ different types of coupons.

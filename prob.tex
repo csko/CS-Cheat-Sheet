@@ -29,6 +29,8 @@ $$\eqalign{
 \E[X \cdot Y] &= \E[X] \cdot \E[Y], \cr & \hbox{if $X$ and $Y$ are independent.}\cr
 \E[X + Y] &= \E[X] + \E[Y], \cr
 \E[c X] &= c \E[X]. \cr}$$
+Convolution (sum of distributions): % TODO: verify notation
+$$(f * g)(t)\ \ \,       \stackrel{\mathrm{def}}{=}\ \int_{-\infty}^{\infty} f(\tau)\, g(t - \tau)\, d\tau$$
 Bayes' theorem:
 $$\Pr[A_i\Bar B] = {\Pr[B\Bar A_i] \Pr[A_i] \over \sum_{j=1}^n \Pr[A_j] \Pr[B\Bar A_j]}.$$
 Inclusion-exclusion:
